@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/border"
+    tools:context=".InforrmationDayOfCalendar">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <TextView
+            android:id="@+id/tv_weekday"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_gravity="center_horizontal"
+            android:text="SUN"
+            android:fontFamily="monospace"
+            android:textSize="36sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_gravity="center_horizontal"
+            android:text="26"
+            android:fontFamily="monospace"
+            android:textSize="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/tv_titleOnVvacation"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/tv_onVacation"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="36sp"
+            android:textColor="@color/colorAccentGreenLite"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50">
+
+
+            <ListView
+                android:id="@+id/listEmployesOnVacation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv_titleSick"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/tv_sick"
+            android:fontFamily="monospace"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorRed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50">
+
+
+            <ListView
+                android:id="@+id/listEmployesSick"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+</LinearLayout>

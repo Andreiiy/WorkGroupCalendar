@@ -1,0 +1,249 @@
+<resources>
+    <string name="app_name" translatable="false">WorkGroupCalendar</string>
+    <string name="title_activity_manager_home" translatable="false">ManagerHomeActivity</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <!-- Layout Selection Status -->
+    <string name="tv_choose_status">Choose your status</string>
+    <string name="tv_employes">Employee</string>
+    <string name="tv_manager">Manager</string>
+
+    <!-- Layout Create Group -->
+    <string name="tv_mygroups">My group</string>
+
+
+    <!-- Notifications -->
+    <string name="not_msg">A new notice has appeared in the</string>
+    <string name="not_requests">requests</string>
+    <string name="not_board">board</string>
+
+    <!-- Layout Signup -->
+    <string name="hint_firstname">First name</string>
+    <string name="hint_surname">Surname</string>
+    <string name="hint_numbertelefon">Number telefon</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="button_registration">Registration</string>
+
+    <!-- Layout Signin -->
+    <string name="link_newAccaunt">No account yet? Create one</string>
+    <string name="link_reset">Forgot Password?</string>
+    <string name="btn_login">Login</string>
+    <string name="tost_autsucc">Authentication success</string>
+    <string name="tost_loginfailed">Login failed success</string>
+    <string name="dialog_auth">Authenticating</string>
+    <string name="snack_authfailed">Authentication failed. Try again</string>
+    <string name="input_email">enter a valid email address</string>
+    <string name="input_pass">Enter at least 6 letters and numbers</string>
+
+
+    <!-- Layout create group -->
+    <string name="hint_namegroup">Name group</string>
+    <string name="button_create">Create</string>
+
+
+    <!-- Tabs Pager Fragment Adapter for Manager -->
+    <string-array name="tabs_manager">
+        <item>Employees</item>
+        <item>Requests</item>
+        <item>Calendar</item>
+        <item>Board</item>
+        <item>Schedule</item>
+    </string-array>
+
+    <!-- Tabs Pager Fragment Adapter for Employee -->
+    <string-array name="tabs_employee">
+        <item>Home</item>
+        <item>Calendar</item>
+        <item>Board</item>
+        <item>Schedule</item>
+        <item>Work Calendar</item>
+    </string-array>
+
+    <!--Layout CreateHolidayRequest Spiner Reasons -->
+    <string name="tv_choosereason">Choose a reason:</string>
+    <string name="tv_choosedate">Choose a date:</string>
+    <string name="button_createrequest">Create request</string>
+    <string-array name="spiner_reasons">
+        <item>Family vacation</item>
+        <item>Going to the doctor</item>
+        <item>Planned vacation</item>
+        <item>Trip abroad</item>
+        <item>Training</item>
+        <item>Feeling unwell</item>
+        <item>Babysittingn</item>
+        <item>For relax</item>
+    </string-array>
+
+    <!--Layout Create MSG to Board -->
+    <string name="tv_message">Message</string>
+    <string name="hint_entertext">Enter text</string>
+
+
+    <!--Layout Form holiday request -->
+    <string name="tv_requestyourperm">Request for permision to  take  vacation</string>
+    <string name="tv_takevacation">to  take  vacation</string>
+    <string name="button_sendrequest">Send request</string>
+    <string name="button_gotoback">Go to back</string>
+    <string name="title_recommendation">Recomnendation \nfor vacation</string>
+    <string name="tv_group">Group</string>
+    <string name="tv_choose">Choose a date:</string>
+    <string name="btn_create">Create request</string>
+    <string name="title_recomend">Recommendation for vacation</string>
+    <string name="tv_i">I</string>
+    <string name="tv_from">from</string>
+    <string name="tv_to">to</string>
+    <string name="tv_take">to  take  vacation</string>
+    <string name="tv_total">Total days:</string>
+    <string name="tv_reason">Reason:</string>
+    <string name="btn_send">Send request</string>
+    <string name="btn_back">Go to back</string>
+
+    <!--Layout Form holiday request for manager-->
+    <string name="tv_reasonrefus">You can enter the reason for the refusal:</string>
+    <string name="hint_reason">Reason</string>
+
+    <!--Layout Fragment Employee-->
+    <string name="tv_ifyousick">If you are sick click</string>
+    <string name="tv_ifYouNotSick">If you are not sick click</string>
+    <string name="btn_createRequest">Create holiday request</string>
+
+    <!--Item number list-->
+    <string name="tv_onVacation">On vacation:</string>
+    <string name="tv_sick">Sick:</string>
+
+    <!--Reductor schedule-->
+    <string name="tv_datefrom">Date from</string>
+    <string name="tv_dateto">Date to</string>
+    <string name="btn_saveSch">Save</string>
+    <string name="btn_newSch">New Schedule</string>
+    <string name="tv_add">add</string>
+    <string name="dialog_title">Add new employee</string>
+    <string name="title_alert">Add  employee</string>
+
+    <!--Fragment schedule-->
+    <string name="tv_work_schedule">Group work schedule</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_additional_schedule">Additional schedule</string>
+
+    <!--Activity additional schedule-->
+    <string name="tv_date">Date</string>
+    <string name="btn_move">move to right</string>
+    <string name="btn_clear">clear all</string>
+    <string name="btn_save">Save All</string>
+    <string name="btn_next">Next day</string>
+
+    <!--Fragment redactor schedule-->
+    <string name="tv_choose_dates">Choose dates:</string>
+    <string name="tv_choose_shift">Chose a shift:</string>
+    <string name="tv_choose_employee">Choose employee:</string>
+
+    <!--Fragment employee-->
+    <string name="tv_vacation">Vacation</string>
+    <string name="sick">Sick</string>
+    <string name="title_daysRequested">Number of days requested</string>
+    <string name="tv_response">Response to the request</string>
+
+
+    <!--Toasts-->
+    <string name="choose_dates">Choose dates</string>
+    <string name="choose_employes">Choose employees</string>
+    <string name="fill_salaryData">You must fill out salary data</string>
+
+    <!--Item list ansvers-->
+    <string name="titleVacation">Vacation</string>
+    <string name="titleApproved">Approved</string>
+    <string name="titleNotApproved">Not Approved</string>
+    <string name="titleReason">Reason:</string>
+
+    <!--Item list ansvers-->
+    <string name="titleResetPassword">We will mail you a link after when you
+        provide email  and click the send button.
+        Pleas click on that link to reset your password.</string>
+    <string name="btnSend">Send Email</string>
+    <string name="tostEnterEmail">Enter email</string>
+    <string name="tostSucces">Please check your Email Account...</string>
+
+    <!--Activity AdditionalInform-->
+    <string name="tv_duration">Shift duration</string>
+    <string name="tv_payment">Payment per hour</string>
+    <string name="tv_salary">Salary</string>
+
+    <!--Fragment Work Calendar-->
+    <string name="tv_title">To get true information, you can change the calendar data by selecting the desired number</string>
+    <string name="tv_shift">Shift</string>
+    <string name="tv_time">Time</string>
+    <string name="tv_Addtime">Addit. time</string>
+    <string name="tv_hoursworked">Hours worked:</string>
+    <string name="tv_paym">Payment:</string>
+    <string name="tv_moredetails">More details</string>
+
+    <!--Actyvity form for additional work day-->
+    <string name="tv_choosAction">Select an action</string>
+    <string name="tv_ifSick">If you were sick</string>
+    <string name="tv_ifVacation">If you were on vacation</string>
+    <string name="tv_changeinform">Change additional time</string>
+    <string name="tv_changeShift">Change shift</string>
+    <string name="tv_switchClear">Clear all</string>
+
+
+    <!--Actyvity salary information-->
+    <string name="tv_vacationPay">Vacation pay</string>
+
+
+    <!--alert dialog view-->
+    <string name="tv_additionalTime">Additional time</string>
+    <string name="hint_hours">Hours</string>
+    <string name="hint_minutes">Minutes</string>
+    <string name="hint_payment">Full payment</string>
+    <string name="hint_enterShift">Enter shift number</string>
+
+    <!--Fragment remainder-->
+    <string name="tv_event">Event</string>
+    <string name="tv_addevent">Add Reminder</string>
+    <string name="hint_enterevent">Enter event name</string>
+    <string name="rb_foryou">For you</string>
+    <string name="rb_foremployee">For employee</string>
+    <string name="toast_picktime">Pick a time</string>
+    <string name="tv_enterdata">In order to start recording
+        your work hours and shifts in the calendar, enter salary data on the first page</string>
+
+    <!--Fragment man-hourses-->
+    <string name="tv_additional_man_hours">The number of additional man hours</string>
+    <string name="tv_man_hours_hift">The number of man-hours per shifts</string>
+    <string name="tv_total_hours">The number of man-hours per shift</string>
+    <string name="tv_title_fragm">In this section you can see the number of man hours spent</string>
+    <string name="tv_title_fragm_chart">Year chart</string>
+
+
+    <string name="menu_home">Home</string>
+    <string name="menu_calendar">Calendar</string>
+    <string name="menu_employes">Employes</string>
+    <string name="menu_employe">Employee</string>
+    <string name="menu_requests">Requests</string>
+    <string name="menu_board">Board</string>
+    <string name="menu_schedule">Schedule</string>
+    <string name="menu_workcalendar">Work Calendar</string>
+    <string name="menu_remindcalendar">Reminders</string>
+    <string name="menu_manhourses">Man hours</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_create_group" translatable="false">CreateGroupActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_employee_home" translatable="false">EmployeeHomeActivity</string>
+    <string name="home_second" translatable="false">Home Second</string>
+</resources>

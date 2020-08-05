@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dialog_rl"
+    android:background="@color/primary">
+
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/tv_additionalTime"
+        android:textColor="@color/colorYellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <EditText
+        android:id="@+id/et_hours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_title"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/hint_hours"
+        android:textSize="15dp"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_title"
+        tools:layout_editor_absoluteX="19dp" />
+
+    <EditText
+        android:id="@+id/et_minutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/hint_minutes"
+        android:textSize="15dp"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/et_hours"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <EditText
+        android:id="@+id/et_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/hint_payment"
+        android:textSize="15dp"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/et_minutes"
+        tools:layout_editor_absoluteX="9dp" />
+
+    <Button
+        android:id="@+id/dialog_positive_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimary"
+        android:text="OK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toEndOf="@+id/dialog_negative_btn"
+        app:layout_constraintTop_toBottomOf="@+id/et_payment" />
+
+    <Button
+        android:id="@+id/dialog_negative_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/dialog_positive_btn"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="24dp"
+        android:layout_toLeftOf="@id/dialog_positive_btn"
+        android:background="@color/colorRed"
+        android:text="No"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_payment" />
+</androidx.constraintlayout.widget.ConstraintLayout>

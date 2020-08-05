@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "129543113806",
+    "firebase_url": "https://workergroupcalendar.firebaseio.com",
+    "project_id": "workergroupcalendar",
+    "storage_bucket": "workergroupcalendar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129543113806:android:ebeb133a77920899b8871f",
+        "android_client_info": {
+          "package_name": "com.appoftatar.workgroupcalendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129543113806-lnh3306rvfedvshm36jalfr50he74n2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcRcS5M7WpVhM1h11qiraaYkJuM8pv8Lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129543113806-lnh3306rvfedvshm36jalfr50he74n2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129543113806:android:7478d8567db38668b8871f",
+        "android_client_info": {
+          "package_name": "com.example.workgroupcalendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129543113806-lnh3306rvfedvshm36jalfr50he74n2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcRcS5M7WpVhM1h11qiraaYkJuM8pv8Lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129543113806-lnh3306rvfedvshm36jalfr50he74n2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

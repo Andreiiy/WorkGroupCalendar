@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="7">
+
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/share"
+            android:textColor="@color/colorYellow"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tv_work_schedule"
+        android:textColor="@color/colorBordo"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/tvDateFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:text="-"
+            android:gravity="center"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/tvDateTo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:text=""
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/colorVioletDark"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:src="@drawable/one"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="5dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:background="@drawable/border_hard">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_shift1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                />
+            </ScrollView>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:src="@drawable/two"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="5dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:background="@drawable/border_hard">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_shift2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                />
+            </ScrollView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:src="@drawable/three"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="5dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:background="@drawable/border_hard">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_shift3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                />
+            </ScrollView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/rlButtons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="13">
+
+        <Button
+            android:id="@+id/btnAdditionalSchedule"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/btn_additional_schedule"
+            android:textSize="17sp"
+            android:textColor="@color/colorRed"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/btnyellowcyrcle"/>
+
+        <Button
+            android:id="@+id/btnCreateSchedule"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/btnredcyrcle"
+            android:text="@string/btn_edit"
+            android:textColor="@color/colorYellow"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/border"
+    tools:context=".InforrmationDayOfCalendar">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <TextView
+            android:id="@+id/tv_weekday"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_gravity="center_horizontal"
+            android:text="SUN"
+            android:fontFamily="monospace"
+            android:textSize="36sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_gravity="center_horizontal"
+            android:text="26"
+            android:fontFamily="monospace"
+            android:textSize="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/tv_titleEvents"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/tv_event"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorAccentGreenLite"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            />
+
+        <EditText
+            android:id="@+id/et_event"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:hint="@string/hint_enterevent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_clock"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:src="@drawable/clock"/>
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:text="00:00"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="26sp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="80"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_forYou"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/rb_foryou"
+                    android:textSize="16dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/rb_forEmployee"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/rb_foremployee"
+                    android:textSize="16dp"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_Employes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_choose_employee"
+                android:textColor="@color/colorRedorange"
+                android:textSize="28dp"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/spinerEmployes"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+        <TextView
+
+            style="@style/TextAppearance.AppCompat.Title"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            />
+
+        <Button
+            android:id="@+id/btnAddRemainder"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/btn_save"
+            android:textSize="20sp"
+            android:textColor="@color/colorYellow"
+            android:layout_weight="5"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btnred"/>
+
+    </LinearLayout>
+</LinearLayout>

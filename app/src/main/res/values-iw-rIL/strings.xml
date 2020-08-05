@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_employes">עובד</string>
+    <string name="tv_choose_status">בחר את הסטטוס שלך</string>
+    <string name="tv_manager">מנהל</string>
+    <string name="hint_surname">שם משפחה</string>
+    <string name="hint_password">סיסמה</string>
+    <string name="button_registration">הרשמה</string>
+    <string name="link_newAccaunt">אין לך חשבון עדיין? תיצור אחד</string>
+    <string name="tv_mygroups">הקבוצה שלי</string>
+    <string name="hint_firstname">שם פרטי</string>
+    <string name="hint_numbertelefon">מספר טלפון</string>
+    <string name="hint_email">אימייל</string>
+    <string name="link_reset">שכחת סיסמא?</string>
+    <string name="hint_namegroup">קבוצת שמות</string>
+    <string name="button_create">צור</string>
+    <string name="tv_choosereason">בחר סיבה:</string>
+    <string name="tv_choosedate">בחר תאריך:</string>
+    <string name="button_createrequest">צור בקשה</string>
+    <string name="tv_message">הודעה</string>
+    <string name="hint_entertext">הזן טקסט</string>
+    <string name="tv_requestyourperm">מבקש את אישורך לצאת לחופשה</string>
+    <string name="tv_takevacation">לצאת לחופשה</string>
+    <string name="button_sendrequest">שלח בקשה</string>
+    <string name="button_gotoback">חזור לאחור</string>
+    <string name="tv_group">קבוצה</string>
+    <string name="tv_reasonrefus">אתה יכול להזין את סיבת הסירוב:</string>
+    <string name="hint_reason">סיבה</string>
+    <string name="tv_ifyousick">אם אתה חולה לחץ</string>
+    <string name="tv_ifYouNotSick">אם אינך חולה לחץ</string>
+    <string name="tv_onVacation">בחופשה:</string>
+    <string name="tv_sick">חולה:</string>
+    <string name="tv_work_schedule">סידור עבודה</string>
+    <string name="btn_edit">ערוך</string>
+    <string name="btn_additional_schedule">סידור עבודה נוסף</string>
+    <string name="tv_choose_dates">בחר תאריכים:</string>
+    <string name="tv_choose_shift">בחרה משמרת:</string>
+    <string name="tv_choose_employee">בחר עובד:</string>
+    <string name="tv_vacation">חופשה</string>
+    <string name="sick">חולה</string>
+    <string name="title_daysRequested">מספר הימים המבוקשים</string>
+    <string name="tv_response">תגובה לבקשה</string>
+    <string name="choose_dates">בחר תאריכים</string>
+    <string name="choose_employes">בחר עובדים</string>
+    <string name="titleVacation">חופשה</string>
+    <string name="titleApproved">אושר</string>
+    <string name="titleNotApproved">לא מאושר</string>
+    <string name="titleReason">סיבה:</string>
+    <string name="titleResetPassword">אנו נשלח אליך קישור לאחר שתספק דוא\"ל ולחץ על כפתור שלח. אנא לחץ על קישור זה כדי לאפס את הסיסמה שלך.</string>
+    <string name="btnSend">שלח אימייל</string>
+    <string name="tostEnterEmail">הזן דוא\"ל</string>
+    <string name="tostSucces">אנא בדוק את חשבון הדוא\"ל שלך ...</string>
+    <string name="menu_home">בית</string>
+    <string name="menu_calendar">לוח שנה</string>
+    <string name="menu_employes">עובדים</string>
+    <string name="menu_employe">עובד</string>
+    <string name="menu_requests">בקשות</string>
+    <string name="menu_board">לוח מודעות</string>
+    <string name="title_recommendation">"Recommendation "</string>
+    <string name="next">הבא</string>
+    <string name="previous">הקודם</string>
+    <string name="tv_date">תאריך</string>
+    <string name="btn_move">לעבור ימינה</string>
+    <string name="btn_clear">לנקות הכל</string>
+    <string name="btn_save">שמור הכל</string>
+    <string name="btn_next">היום הבא</string>
+    <string name="tv_choose">בחר תאריך:</string>
+    <string name="btn_create">צור בקשה</string>
+    <string name="title_recomend">המלצה לחופשה</string>
+    <string name="tv_i">אני</string>
+    <string name="tv_from">מ</string>
+    <string name="tv_to">ל</string>
+    <string name="tv_take">לצאת לחופשה</string>
+    <string name="tv_total">סה\"כ ימים:</string>
+    <string name="tv_reason">סיבה:</string>
+    <string name="btn_send">שלח בקשה</string>
+    <string name="btn_back">תחזור</string>
+    <string name="tv_datefrom">תאריך מ-</string>
+    <string name="tv_dateto">תאריך ל</string>
+    <string name="btn_saveSch">שמור</string>
+    <string name="btn_login">כניסה</string>
+    <string name="btn_createRequest">צור בקשת חופשה</string>
+
+    <!-- Tabs Pager Fragment Adapter for Manager -->
+    <string-array name="tabs_manager">
+        <item>Employees</item>
+        <item>Requests</item>
+        <item>Calendar</item>
+        <item>Board</item>
+        <item>Schedule</item>
+    </string-array>
+
+    <!-- Tabs Pager Fragment Adapter for Employee -->
+    <string-array name="tabs_employee">
+        <item>Home</item>
+        <item>Calendar</item>
+        <item>Board</item>
+        <item>Schedule</item>
+        <item>Work Calendar</item>
+    </string-array>
+
+    <string-array name="spiner_reasons">
+        <item>חופשה משפחתית</item>
+        <item>הולך לרופא</item>
+        <item>חופשה מתוכננת</item>
+        <item>טיול לחוץ לארץ</item>
+        <item>לימוד</item>
+        <item>מרגיש לא טוב</item>
+        <item>ישיבה תינוקת</item>
+        <item>לנוח</item>
+    </string-array>
+    <string name="tv_add">להוסיף</string>
+    <string name="title_alert">הוסף עובד</string>
+    <string name="tost_autsucc">הצלחת אימות</string>
+    <string name="tost_loginfailed">ההצלחה בכניסה נכשלה</string>
+    <string name="dialog_auth">אימות</string>
+    <string name="snack_authfailed">אימות נכשל. נסה שוב</string>
+    <string name="input_email">הכנס כתובת אימייל תקינה</string>
+    <string name="input_pass">הזן לפחות 6 אותיות ומספרים</string>
+    <string name="btn_newSch">סידור עבודה חדש</string>
+    <string name="dialog_title">הוסף עובד חדש</string>
+    <string name="tv_duration">משך משמרת</string>
+    <string name="tv_payment">תשלום לשעה</string>
+    <string name="tv_salary">המשכורת</string>
+    <string name="tv_title">כדי לקבל מידע אמיתי, אתה יכול לשנות את נתוני לוח השנה על ידי בחירת המספר הרצוי</string>
+    <string name="tv_shift">משמרת</string>
+    <string name="tv_time">זמן</string>
+    <string name="tv_Addtime">זמן נוסף</string>
+    <string name="tv_hoursworked">שעות עבודה:</string>
+    <string name="tv_paym">תשלום:</string>
+    <string name="tv_moredetails">פרטים נוספים</string>
+    <string name="tv_changeinform">שינוי לאורך זמן</string>
+    <string name="tv_changeShift">לשנות משמרת</string>
+    <string name="tv_ifVacation">אם היית בחופשה</string>
+    <string name="tv_ifSick">אם היית חולה</string>
+    <string name="tv_choosAction">בחר פעולה</string>
+    <string name="tv_additionalTime">זמן נוסף</string>
+    <string name="hint_hours">שעות</string>
+    <string name="hint_minutes">דקות</string>
+    <string name="hint_payment">תשלום מלא</string>
+    <string name="hint_enterShift">הזן את מספר המשמרת</string>
+    <string name="tv_switchClear">לנקות הכל</string>
+    <string name="not_msg">הודעה חדשה הופיעה ב-</string>
+    <string name="not_requests">בקשות</string>
+    <string name="not_board">לוּחַ</string>
+    <string name="tv_vacationPay">דמי חופשה</string>
+    <string name="fill_salaryData">עליכם למלא את נתוני השכר</string>
+    <string name="menu_schedule">סידור עבודה</string>
+    <string name="menu_workcalendar">לוח שנה לעבודה</string>
+    <string name="tv_event">אירוע</string>
+    <string name="tv_addevent">הוסף תזכורת</string>
+    <string name="hint_enterevent">הזן את שם האירוע</string>
+    <string name="rb_foryou">בשבילך</string>
+    <string name="rb_foremployee">לעובד</string>
+    <string name="menu_remindcalendar">תזכורות</string>
+    <string name="tv_enterdata">כדי להתחיל לרשום את שעות העבודה והמשמרות שלך בלוח שנה, הזן נתוני שכר בעמוד הראשון.</string>
+    <string name="toast_picktime">בחר זמן</string>
+    <string name="tv_title_fragm">בחלק זה תוכלו לראות את מספר שעות הגבר בהן נעשה שימוש.</string>
+    <string name="tv_total_hours">סך כל שעות הגבר</string>
+    <string name="tv_man_hours_hift">מספר שעות העבודה למשמרות</string>
+    <string name="tv_additional_man_hours">מספר שעות הגבר הנוספות</string>
+    <string name="tv_title_fragm_chart">תרשים שנה</string>
+    <string name="menu_manhourses">שעות גבר</string>
+</resources>

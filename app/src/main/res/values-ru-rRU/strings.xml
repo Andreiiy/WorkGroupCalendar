@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_choose_status">Выбери свой статус</string>
+    <string name="tv_employes">Рабочий</string>
+    <string name="tv_manager">Начальник</string>
+    <string name="tv_mygroups">Моя группа</string>
+    <string name="hint_firstname">Имя</string>
+    <string name="hint_surname">Фамилия</string>
+    <string name="hint_numbertelefon">Телефон</string>
+    <string name="hint_email">Почта</string>
+    <string name="hint_password">Пароль</string>
+    <string name="button_registration">Регистрация</string>
+    <string name="link_newAccaunt">Еще нет аккаунта? Создай</string>
+    <string name="link_reset">Забыл пароль?</string>
+    <string name="btn_login">Авторизоваться</string>
+    <string name="hint_namegroup">Название группы</string>
+    <string name="button_create">Создать</string>
+    <string name="tv_choosereason">Выберите причину:</string>
+    <string name="tv_choosedate">Выберите дату:</string>
+    <string name="button_createrequest">Создать запрос</string>
+    <string name="tv_message">Сообщение</string>
+    <string name="hint_entertext">Введите текст</string>
+    <string name="tv_requestyourperm">прошу разрешение взять отпуск</string>
+    <string name="tv_takevacation">to take vacation</string>
+    <string name="button_sendrequest">Послать запрос</string>
+    <string name="button_gotoback">назад</string>
+    <string name="title_recommendation">"Recomnendation "</string>
+    <string name="tv_group">Группа</string>
+    <string name="tv_choose">Выберите дату:</string>
+    <string name="btn_create">Создать запрос</string>
+    <string name="title_recomend">Заявление на отпуск</string>
+    <string name="tv_i">Я</string>
+    <string name="tv_from">с</string>
+    <string name="tv_to">до</string>
+    <string name="tv_take">взять отпуск</string>
+    <string name="tv_total">Всего дней:</string>
+    <string name="tv_reason">Причина:</string>
+    <string name="btn_send">Послать запрос</string>
+    <string name="btn_back">Назад</string>
+    <string name="tv_reasonrefus">Вы можете указать причину отказа:</string>
+    <string name="hint_reason">Причина</string>
+    <string name="tv_ifyousick">Если вы больны, нажмите</string>
+    <string name="tv_ifYouNotSick">Если вы не больны, нажмите</string>
+    <string name="btn_createRequest">Создать запрос на отпуск</string>
+    <string name="tv_onVacation">В отпуске:</string>
+    <string name="tv_sick">Больной:</string>
+    <string name="tv_datefrom">Дата с</string>
+    <string name="tv_dateto">Дата до</string>
+    <string name="btn_saveSch">Сохранить</string>
+    <string name="tv_work_schedule">График работы группы</string>
+    <string name="btn_edit">Редактировать</string>
+    <string name="btn_additional_schedule">Дополнительный график</string>
+    <string name="tv_date">Дата</string>
+    <string name="btn_move">сдвинуть вправо</string>
+    <string name="btn_clear">очистить</string>
+    <string name="btn_save">Сохранить все</string>
+    <string name="btn_next">Еще день</string>
+    <string name="tv_choose_dates">Выберите даты:</string>
+    <string name="tv_choose_shift">Выберите смену:</string>
+    <string name="tv_choose_employee">Выберите сотрудника:</string>
+    <string name="tv_vacation">Отпуск</string>
+    <string name="sick">Болел</string>
+    <string name="title_daysRequested">Количество запрошеных дней</string>
+    <string name="tv_response">Ответ на запрос</string>
+    <string name="choose_dates">Выбери даты</string>
+    <string name="choose_employes">Выбери работников</string>
+    <string name="titleVacation">Отпуск</string>
+    <string name="titleApproved">Подтверждено</string>
+    <string name="titleNotApproved">Отказано</string>
+    <string name="titleReason">Причина:</string>
+    <string name="titleResetPassword">Мы отправим вам ссылку после того, как вы отправите электронный адрес и нажмете кнопку «Отправить». Пожалуйста, нажмите на эту ссылку, чтобы сбросить пароль.</string>
+    <string name="btnSend">Отправить</string>
+    <string name="tostEnterEmail">Введите Email</string>
+    <string name="tostSucces">Пожалуйста, проверьте свою учетную запись электронной почты ...</string>
+    <string name="menu_home">Дом</string>
+    <string name="menu_calendar">Календарь</string>
+    <string name="menu_employes">Рабочие</string>
+    <string name="menu_employe">Рабочий</string>
+    <string name="menu_requests">Запросы</string>
+    <string name="menu_board">Доска</string>
+    <string name="next">Следующий</string>
+    <string name="previous">Предыдущий</string>
+
+    <string-array name="spiner_reasons">
+        <item>Семейные обстоятельства</item>
+        <item>Поход к доктору</item>
+        <item>Плановый отпуск</item>
+        <item>Поездка заграницу</item>
+        <item>Учеба</item>
+        <item>Плохое самочувствие</item>
+        <item>Присмотр за детьми</item>
+        <item>Отдохнуть</item>
+    </string-array>
+    <string name="tv_add">добавить</string>
+    <string name="title_alert">Добавить работника</string>
+    <string name="tost_autsucc">Успешная аутентификация</string>
+    <string name="dialog_auth">Аутентификация</string>
+    <string name="snack_authfailed">Ошибка аутентификации. Попробуйте еще раз</string>
+    <string name="tost_loginfailed">Войти не удалось</string>
+    <string name="input_email">Введите действительный адрес электронной почты</string>
+    <string name="input_pass">Введите не менее 6 букв и цифр</string>
+    <string name="btn_newSch">Новое расписание</string>
+    <string name="dialog_title">Добавить нового сотрудника</string>
+    <string name="tv_duration">Продолжительность смены</string>
+    <string name="tv_payment">Оплата за час</string>
+    <string name="tv_salary">Зарплата</string>
+    <string name="tv_title">"Для получения правдивой информации вы можете изменять данные календаря выбрав нужное число  "</string>
+    <string name="tv_shift">Смена</string>
+    <string name="tv_time">Время</string>
+    <string name="tv_Addtime">Доп. время</string>
+
+    <string-array name="tabs_employee">
+        <item>Home</item>
+        <item>Calendar</item>
+        <item>Board</item>
+        <item>Schedule</item>
+        <item>Work Calendar</item>
+    </string-array>
+    <string name="tv_moredetails">Подробнее</string>
+    <string name="tv_hoursworked">Отработанные часы:</string>
+    <string name="tv_paym">Оплата:</string>
+    <string name="tv_choosAction">Выберите действие</string>
+    <string name="tv_ifSick">Если вы были больны</string>
+    <string name="tv_ifVacation">Если вы были в отпуске</string>
+    <string name="tv_changeinform">Изменить дополнительное время</string>
+    <string name="tv_changeShift">Изменить смену</string>
+    <string name="hint_enterShift">Введите номер смены</string>
+    <string name="hint_payment">Полная оплата</string>
+    <string name="hint_minutes">Минуты</string>
+    <string name="hint_hours">Часы</string>
+    <string name="tv_additionalTime">Дополнительное время</string>
+    <string name="tv_switchClear">Очистить все</string>
+    <string name="not_msg">Новое уведомление появилось в</string>
+    <string name="not_board">доске</string>
+    <string name="not_requests">запросах</string>
+    <string name="tv_vacationPay">Отпускные</string>
+    <string name="fill_salaryData">Вы должны заполнить данные о зарплате</string>
+    <string name="menu_schedule">График работы</string>
+    <string name="menu_workcalendar">Рабочий календарь</string>
+    <string name="tv_event">Событие</string>
+    <string name="tv_addevent">Добавить напоминание</string>
+    <string name="hint_enterevent">Введите название события</string>
+    <string name="rb_foryou">Для тебя</string>
+    <string name="rb_foremployee">Для работника</string>
+    <string name="menu_remindcalendar">Напоминания</string>
+    <string name="tv_enterdata">Чтобы начать записывать ваши рабочие часы и смены в календаре, введите данные о зарплате на первой странице.</string>
+    <string name="toast_picktime">Выбери время</string>
+    <string name="tv_title_fragm">"В этом разделе вы можете увидеть количество затраченных человеко-часов.  "</string>
+    <string name="tv_total_hours">"Общее количество человеко-часов "</string>
+    <string name="tv_man_hours_hift">Количество человеко-часов по сменам</string>
+    <string name="tv_additional_man_hours">Количество дополнительных человеко-часов</string>
+    <string name="tv_title_fragm_chart">Диаграмма на год</string>
+    <string name="menu_manhourses">Человеко-часы</string>
+</resources>

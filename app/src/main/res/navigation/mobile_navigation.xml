@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.appoftatar.workgroupcalendar.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home_employee">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.example.workgroupcalendar.ui.home.HomeSecondFragment"
+        android:label="@string/home_second"
+        tools:layout="@layout/fragment_home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_home" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_employee"
+        android:name="com.appoftatar.workgroupcalendar.ui.employee_inform.EmployeeFragment"
+        android:label="@string/menu_employe"
+        tools:layout="@layout/fragment_employee" />
+
+    <fragment
+        android:id="@+id/nav_calendar"
+        android:name="com.appoftatar.workgroupcalendar.ui.calendar.CalendarFragment"
+        android:label="@string/menu_calendar"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+    android:id="@+id/nav_board"
+    android:name="com.appoftatar.workgroupcalendar.ui.board.BoardFragment"
+    android:label="@string/menu_board"
+    tools:layout="@layout/fragment_board" />
+    <fragment
+        android:id="@+id/nav_schedule"
+        android:name="com.appoftatar.workgroupcalendar.ui.schedule.WorkScheduleFragment"
+        android:label="@string/menu_schedule"
+        tools:layout="@layout/fragment_work_schedule" />
+    <fragment
+        android:id="@+id/nav_workcalendar"
+        android:name="com.appoftatar.workgroupcalendar.ui.workcalendar.WorkCalendarFragment"
+        android:label="@string/menu_workcalendar"
+        tools:layout="@layout/fragment_workcalendar" />
+
+    <fragment
+        android:id="@+id/nav_remindcalendar"
+        android:name="com.appoftatar.workgroupcalendar.ui.remainder_calendar.FragmentRemainderCalendar"
+        android:label="@string/menu_remindcalendar"
+        tools:layout="@layout/fragment_reminder_calendar" />
+</navigation>

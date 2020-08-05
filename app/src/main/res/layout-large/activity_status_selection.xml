@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".StatusSelectionActivity"
+    tools:showIn="@layout/activity_status_selection">
+
+    <ImageView
+        android:id="@+id/ivTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:text="@string/tv_choose_status"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:textColor="@color/colorOrangeLite"
+        android:textStyle="bold"
+        android:background="@color/colorWhite"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        android:layout_marginBottom="20dp"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/llEmployes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/border_lite"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="30"
+                android:text="@string/tv_employes"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlueGray"
+                android:textSize="28dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnEmployes"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:background="@drawable/employees"
+                android:layout_marginBottom="30dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llManager"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_lite"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="30"
+                android:text="@string/tv_manager"
+                android:textAlignment="center"
+                android:textSize="28dp"
+                android:textColor="@color/colorBlueGray"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnManager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:background="@drawable/maneger"
+                android:layout_marginBottom="30dp"
+
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
