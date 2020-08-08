@@ -11,9 +11,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.di.components.DaggerFireBaseComponent;
+
+
 import com.appoftatar.workgroupcalendar.di.components.DaggerSigninComponent;
-import com.appoftatar.workgroupcalendar.di.components.FireBaseComponent;
+
 import com.appoftatar.workgroupcalendar.di.components.SigninComponent;
 import com.appoftatar.workgroupcalendar.di.modules.SigninViewModule;
 import com.appoftatar.workgroupcalendar.presenters.SigninPresenter;
@@ -32,6 +33,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import javax.inject.Inject;
+
 public class SigninActivity extends AppCompatActivity implements SigninView {
        //region //============= FIELDS ===================//
     private boolean check = false;
@@ -47,7 +50,8 @@ public class SigninActivity extends AppCompatActivity implements SigninView {
     CoordinatorLayout cordLayoutSignin;
 
     private SigninComponent signinComponent;
-    private SigninPresenter presenter;
+    @Inject
+    SigninPresenter presenter;
     //endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +66,7 @@ public class SigninActivity extends AppCompatActivity implements SigninView {
        //endregion
 
         signinComponent = DaggerSigninComponent.builder().signinViewModule(new SigninViewModule(this)).build();
-        presenter = signinComponent.getSigninPresenter();
+        signinComponent.inject(this);
 
 
 
@@ -176,7 +180,7 @@ private void initViews(){
     @Override
     public void passwordTextError(Boolean checked) {
         if(checked)
-            _passwordText.setError(getResources().getText(R.string.input_email));
+            _passwordText.setError(getResources().getText(R.string.input_pass));
         else
             _passwordText.setError(null);
     }

@@ -4,31 +4,22 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-
-import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.models.User;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class SignupActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.models.User;
+import com.appoftatar.workgroupcalendar.presenters.SignupPresenter;
+import com.appoftatar.workgroupcalendar.views.SignupView;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class SignupActivity extends AppCompatActivity implements SignupView {
     //region ============= FIELDS ===================//
     private FirebaseAuth mAuth;
     private EditText _telefonText;
@@ -38,6 +29,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText _surNameText;
     private EditText _firstNameText;
     String name_group;
+    SignupPresenter presenter;
  //endregion
 
     @Override
@@ -46,6 +38,52 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         //region ============= INITIALISATION VIEW ELEMENTS ===================//
+        initViews();
+        //endregion
+
+        _registrButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String firstname = _firstNameText.getText().toString();
+                String surname = _surNameText.getText().toString();
+                String telefon = _telefonText.getText().toString();
+                String email = _emailText.getText().toString();
+                String password = _passwordText.getText().toString();
+                //Validation
+                if (presenter.validate(firstname, surname, telefon, email, password)) {
+                    Intent intent = getIntent();
+                    final String name_group = intent.getStringExtra("NAME_GROUP");
+                    String IdManager = intent.getStringExtra("ID_MANAGER");
+
+                    String identManager = "false";
+                    if(IdManager==null) {
+                        IdManager = "0";
+                        identManager = "true";
+                    }
+
+                    User myuser = new User("",
+                            _firstNameText.getText().toString(),
+                            _surNameText.getText().toString(),
+                            _emailText.getText().toString(),
+                            _telefonText.getText().toString(),
+                            name_group,
+                            IdManager, "false",
+                            _passwordText.getText().toString(),
+                            identManager);
+                    if (name_group == null)
+                        presenter.registrationManager(myuser);
+                    else
+                        presenter.registrationEmployee(myuser);
+                }
+            }
+        });
+
+
+
+    }
+
+    private void initViews(){
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ImageView ivTitle = (ImageView) findViewById(R.id.ivTitle);
@@ -67,174 +105,8 @@ public class SignupActivity extends AppCompatActivity {
         else {
             _registrButton.setBackground(new BitmapDrawable(getResources(),bitmap));
         }
-        //endregion
-        _registrButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = _emailText.getText().toString();
-                String pass = _passwordText.getText().toString();
-        if(name_group == null)
-                registrationManager(email, pass);
-        else
-            registrationEmployee(email, pass);
-            }
-        });
-
-
-
-    }
-    private void registrationEmployee(String email, String password){
-        if (validate()) {
-            FirebaseAuth newAuth = FirebaseAuth.getInstance();
-            newAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(SignupActivity.this, "Registration success .", Toast.LENGTH_LONG).show();
-                                FirebaseUser user = mAuth.getInstance().getCurrentUser();
-                                if (user != null) {
-                                    // Add user to database
-                                    addUserToDatabase(user);
-
-                                } else {
-                                    // If sign in fails, display a message to the user.
-
-                                    Toast.makeText(SignupActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        }
-                    });
-        }
     }
 
-    public void registrationManager(String email, String pass) {
-
-        if (validate()) {
-            mAuth.createUserWithEmailAndPassword(email, pass)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(SignupActivity.this, "Registration success .", Toast.LENGTH_SHORT).show();
-                                FirebaseUser user = mAuth.getInstance().getCurrentUser();
-                                if (user != null) {
-                                    // Add user to database
-                                    addUserToDatabase(user);
-
-                                } else {
-                                    // If sign in fails, display a message to the user.
-
-                                    Toast.makeText(SignupActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        }
-                    });
-
-        }
-    }
-
-
-    public void addUserToDatabase(FirebaseUser user){
-        Intent intent = getIntent();
-        final String name_group = intent.getStringExtra("NAME_GROUP");
-        String IdManager = intent.getStringExtra("ID_MANAGER");
-
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-        String firebaseUserID = user.getUid().toString();
-        String identManager = "false";
-        if(IdManager==null) {
-            IdManager = "0";
-            identManager = "true";
-        }
-
-
-        User myuser = new User(firebaseUserID,
-                _firstNameText.getText().toString(),
-                _surNameText.getText().toString(),
-                _emailText.getText().toString(),
-                _telefonText.getText().toString(),
-                name_group,
-                IdManager, "false",
-                _passwordText.getText().toString(),
-                identManager);
-
-        myRef.child("users").child(user.getUid()).setValue(myuser)
-               .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        if(name_group.equals("0")) {
-                           boolean b = Common.manager;
-                            Intent intent = new Intent(getBaseContext(), SigninActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }else {
-                            Intent intent = new Intent(getBaseContext(), ManagerHomeActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Write failed
-                        // ...
-                    }
-                });
-    }
-
-    public boolean validate() {
-        boolean valid = true;
-
-
-        String firstname = _firstNameText.getText().toString();
-        String surname = _surNameText.getText().toString();
-        String telefon = _telefonText.getText().toString();
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
-
-        if (firstname.isEmpty() ) {
-            _firstNameText.setError("enter name");
-            valid = false;
-        } else {
-            _firstNameText.setError(null);
-        }
-
-        if (surname.isEmpty() ) {
-            _surNameText.setError("enter surname");
-            valid = false;
-        } else {
-            _surNameText.setError(null);
-        }
-
-        if (telefon.isEmpty() || telefon.length() < 4 || telefon.length() > 15) {
-            _telefonText.setError("between 4 and 15 alphanumeric");
-            valid = false;
-        } else {
-            _telefonText.setError(null);
-        }
-
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
-            valid = false;
-        } else {
-            _emailText.setError(null);
-        }
-
-        if (password.isEmpty() || password.length() < 6 || password.length() > 10) {
-            _passwordText.setError("between 6 and 10 alphanumeric characters");
-            valid = false;
-        } else {
-            _passwordText.setError(null);
-        }
-
-        return valid;
-    }
 
     @Override
     public void onBackPressed() {
@@ -251,5 +123,68 @@ public class SignupActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         Common.aplicationVisible = true;
+    }
+
+    @Override
+    public void registrationSuccess() {
+        Toast.makeText(SignupActivity.this, "Registration success .", Toast.LENGTH_SHORT).show();
+        if(name_group.equals("0")) {
+            Intent intent = new Intent(getBaseContext(), SigninActivity.class);
+            startActivity(intent);
+            finish();
+        }else {
+            Intent intent = new Intent(getBaseContext(), ManagerHomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
+    public void registrationFailed() {
+        Toast.makeText(SignupActivity.this, "Registration failed.",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showErrorToField(String fieldName) {
+
+        switch(fieldName){
+            case "name":
+                _firstNameText.setError("enter name");
+                break;
+            case "surname":
+                _surNameText.setError("enter surname");
+                break;
+            case "telefon":
+                _telefonText.setError("between 4 and 15 alphanumeric");
+                break;
+            case "email":
+                _emailText.setError("enter a valid email address");
+                break;
+            case "password":
+                _passwordText.setError("between 6 and 10 alphanumeric characters");
+                break;
+        }
+    }
+
+    @Override
+    public void deleteErrorField(String fieldName) {
+        switch(fieldName){
+            case "name":
+                _firstNameText.setError(null);
+                break;
+            case "surname":
+                _surNameText.setError(null);
+                break;
+            case "telefon":
+                _telefonText.setError(null);
+                break;
+            case "email":
+                _emailText.setError(null);
+                break;
+            case "password":
+                _passwordText.setError(null);
+                break;
+        }
     }
 }

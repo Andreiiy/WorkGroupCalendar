@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.appoftatar.workgroupcalendar.R;
+//import com.appoftatar.workgroupcalendar.di.components.DaggerFireBaseComponent;
 import com.appoftatar.workgroupcalendar.di.components.DaggerFireBaseComponent;
 import com.appoftatar.workgroupcalendar.di.components.FireBaseComponent;
 import com.appoftatar.workgroupcalendar.views.SigninView;
@@ -16,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import javax.inject.Inject;
+
 public class SigninPresenter {
 
     private FirebaseAuth mAuth;
@@ -24,12 +27,13 @@ public class SigninPresenter {
 
     private SigninView view;
 
+    @Inject
     public SigninPresenter(SigninView view) {
         this.view = view;
         fireBaseComponent = DaggerFireBaseComponent.builder().build();
 
         mAuth = fireBaseComponent.getFirebaseAuth();
-        //rootDatabase = fireBaseComponent.getDatabaseReference();
+
     }
 
     public void signin(String email,String password){
