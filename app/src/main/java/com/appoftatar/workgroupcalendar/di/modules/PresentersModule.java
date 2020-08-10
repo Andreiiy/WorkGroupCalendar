@@ -1,9 +1,12 @@
 package com.appoftatar.workgroupcalendar.di.modules;
 
+import com.appoftatar.workgroupcalendar.di.modules.viewsModules.EmployeesModule;
 import com.appoftatar.workgroupcalendar.di.modules.viewsModules.GroupsViewModule;
+import com.appoftatar.workgroupcalendar.presenters.EmployeesPresenter;
 import com.appoftatar.workgroupcalendar.presenters.GroupsPresenter;
 import com.appoftatar.workgroupcalendar.presenters.SigninPresenter;
 import com.appoftatar.workgroupcalendar.presenters.SignupPresenter;
+import com.appoftatar.workgroupcalendar.views.EmployesView;
 import com.appoftatar.workgroupcalendar.views.GroupsView;
 import com.appoftatar.workgroupcalendar.views.SigninView;
 import com.appoftatar.workgroupcalendar.views.SignupView;
@@ -11,7 +14,7 @@ import com.appoftatar.workgroupcalendar.views.SignupView;
 import dagger.Module;
 import dagger.Provides;
 
-@Module(includes = {SigninViewModule.class,SignupViewModule.class, GroupsViewModule.class})
+@Module(includes = {SigninViewModule.class,SignupViewModule.class, GroupsViewModule.class, EmployeesModule.class})
 public class PresentersModule {
 
     @Provides
@@ -27,5 +30,9 @@ public class PresentersModule {
     @Provides
     public GroupsPresenter provideGroupsPresenter(GroupsView view){
         return new GroupsPresenter(view);
+    }
+    @Provides
+    public EmployeesPresenter provideEmployeesPresenter(EmployesView view){
+        return new EmployeesPresenter(view);
     }
 }

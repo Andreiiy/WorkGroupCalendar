@@ -84,6 +84,7 @@ public class GroupsPresenter {
                     }
                     if(listGroup.size()!=0) {
                         Common.listGroup = listGroup;
+                        view.hideProgressBar();
                         view.showGroups(listGroup);
                     }
                 }
@@ -97,6 +98,7 @@ public class GroupsPresenter {
     }
 
     public void showGroups(){
+        view.showProgressBar();
         getCurrentUser();
     }
 
