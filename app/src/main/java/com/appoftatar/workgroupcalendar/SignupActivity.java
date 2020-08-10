@@ -14,14 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.di.components.DaggerEntranceComponent;
+import com.appoftatar.workgroupcalendar.di.components.EntranceComponent;
+import com.appoftatar.workgroupcalendar.di.modules.SigninViewModule;
+import com.appoftatar.workgroupcalendar.di.modules.SignupViewModule;
 import com.appoftatar.workgroupcalendar.models.User;
 import com.appoftatar.workgroupcalendar.presenters.SignupPresenter;
 import com.appoftatar.workgroupcalendar.views.SignupView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import javax.inject.Inject;
+
 public class SignupActivity extends AppCompatActivity implements SignupView {
     //region ============= FIELDS ===================//
-    private FirebaseAuth mAuth;
     private EditText _telefonText;
     private EditText _emailText;
     private EditText _passwordText;
@@ -29,6 +34,8 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
     private EditText _surNameText;
     private EditText _firstNameText;
     String name_group;
+    EntranceComponent component;
+    @Inject
     SignupPresenter presenter;
  //endregion
 
@@ -41,6 +48,10 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
         initViews();
         //endregion
 
+        component = DaggerEntranceComponent.builder().signupViewModule(new SignupViewModule(this))
+                .signinViewModule(new SigninViewModule(null)).build();
+        component.inject(this);
+
         _registrButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +61,7 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
                 String telefon = _telefonText.getText().toString();
                 String email = _emailText.getText().toString();
                 String password = _passwordText.getText().toString();
+
                 //Validation
                 if (presenter.validate(firstname, surname, telefon, email, password)) {
                     Intent intent = getIntent();
@@ -71,6 +83,8 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
                             IdManager, "false",
                             _passwordText.getText().toString(),
                             identManager);
+
+                    //Registration
                     if (name_group == null)
                         presenter.registrationManager(myuser);
                     else
@@ -88,8 +102,6 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
         setSupportActionBar(toolbar);
         ImageView ivTitle = (ImageView) findViewById(R.id.ivTitle);
         ivTitle.setImageBitmap(Common.decodeSampledBitmapFromResource(getResources(),R.drawable.title2,150,100));
-
-        mAuth = FirebaseAuth.getInstance();
 
         _firstNameText = (EditText) findViewById(R.id.input_firstName);
         _surNameText = (EditText) findViewById(R.id.input_surName);

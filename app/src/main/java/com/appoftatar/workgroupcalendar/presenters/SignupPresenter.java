@@ -6,13 +6,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.appoftatar.workgroupcalendar.SigninActivity;
-import com.appoftatar.workgroupcalendar.SignupActivity;
 import com.appoftatar.workgroupcalendar.di.components.DaggerFireBaseComponent;
 import com.appoftatar.workgroupcalendar.di.components.FireBaseComponent;
 import com.appoftatar.workgroupcalendar.models.User;
 import com.appoftatar.workgroupcalendar.views.SignupView;
-import com.google.android.gms.common.internal.service.Common;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -23,12 +20,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import javax.inject.Inject;
+
 public class SignupPresenter {
 
     FireBaseComponent fireBaseComponent;
     private FirebaseAuth mAuth;
     private SignupView view;
 
+    @Inject
     public SignupPresenter(SignupView view) {
         this.view = view;
         fireBaseComponent = DaggerFireBaseComponent.builder().build();

@@ -13,14 +13,13 @@ import android.os.Bundle;
 import com.appoftatar.workgroupcalendar.Common.Common;
 
 
-import com.appoftatar.workgroupcalendar.di.components.DaggerSigninComponent;
-
-import com.appoftatar.workgroupcalendar.di.components.SigninComponent;
+import com.appoftatar.workgroupcalendar.di.components.DaggerEntranceComponent;
+import com.appoftatar.workgroupcalendar.di.components.EntranceComponent;
 import com.appoftatar.workgroupcalendar.di.modules.SigninViewModule;
+import com.appoftatar.workgroupcalendar.di.modules.SignupViewModule;
 import com.appoftatar.workgroupcalendar.presenters.SigninPresenter;
 import com.appoftatar.workgroupcalendar.views.SigninView;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.database.DatabaseReference;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -49,7 +48,7 @@ public class SigninActivity extends AppCompatActivity implements SigninView {
     public ProgressDialog progressDialog;
     CoordinatorLayout cordLayoutSignin;
 
-    private SigninComponent signinComponent;
+    private EntranceComponent component;
     @Inject
     SigninPresenter presenter;
     //endregion
@@ -59,14 +58,13 @@ public class SigninActivity extends AppCompatActivity implements SigninView {
         setContentView(R.layout.activity_signin);
 
         //region //========= INITIALISATION VIEW ELEMENTS =============//
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        initViews();
+       initViews();
        //endregion
 
-        signinComponent = DaggerSigninComponent.builder().signinViewModule(new SigninViewModule(this)).build();
-        signinComponent.inject(this);
+
+        component = DaggerEntranceComponent.builder().signinViewModule(new SigninViewModule(this))
+                .signupViewModule(new SignupViewModule(null)).build();
+        component.inject(this);
 
 
 
@@ -123,6 +121,9 @@ public class SigninActivity extends AppCompatActivity implements SigninView {
     }
 
 private void initViews(){
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
     ImageView ivTitle = (ImageView) findViewById(R.id.ivTitle);
     ivTitle.setImageBitmap(Common.decodeSampledBitmapFromResource(getResources(),R.drawable.title2,150,150));
 

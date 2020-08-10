@@ -9,8 +9,13 @@ import android.os.Bundle;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
 import com.appoftatar.workgroupcalendar.adapters.GroupListAdapter;
+import com.appoftatar.workgroupcalendar.di.components.DaggerManagerApiComponent;
+import com.appoftatar.workgroupcalendar.di.components.ManagerApiComponent;
+import com.appoftatar.workgroupcalendar.di.modules.viewsModules.GroupsViewModule;
 import com.appoftatar.workgroupcalendar.models.Group;
 import com.appoftatar.workgroupcalendar.models.User;
+import com.appoftatar.workgroupcalendar.presenters.GroupsPresenter;
+import com.appoftatar.workgroupcalendar.views.GroupsView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,118 +40,89 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class CreateGroupActivity extends AppCompatActivity {
-    //region ============= FIELDS ===================//
+import javax.inject.Inject;
 
+public class CreateGroupActivity extends AppCompatActivity implements GroupsView {
+    //region ============= FIELDS ===================//
     private RecyclerView listGroups;
     private TextView tvUserName;
-    private FirebaseAuth mAuth;
-    private FirebaseUser firebaseUser;
-    private DatabaseReference rootDataBase;
-    private ArrayList<Group> listGroup;
     private GroupListAdapter groupListAdapter;
-    private NotificationManager notificationManager;
     private FloatingActionButton fab;
+    public ProgressDialog progressDialog;
+    ManagerApiComponent component;
+    @Inject
+    GroupsPresenter presenter;
+
+   //endregion
 
 
-    //endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_group);
 
-        //region ============= INITIALISATION VIEW ELEMENTS ===================//
+        //============= INITIALISATION VIEW ELEMENTS ===================//
+        initViews();
 
-        fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Common.listGroup = listGroup;
-                Intent intent = new Intent(getApplicationContext() ,FormNewGroupActivity.class);
-                startActivity(intent);
-
-            }
-        });
-        listGroup = new ArrayList<>();
-
-        createListGroup(listGroup);
-
-        firebaseUser = mAuth.getInstance().getCurrentUser();
-        rootDataBase = FirebaseDatabase.getInstance().getReference();
-        tvUserName = (TextView)findViewById(R.id.nameManager);
-        //endregion
-
-        getCurrentUser();
-
+        component = DaggerManagerApiComponent.builder().groupsViewModule(new GroupsViewModule(this)).build();
+        component.inject(this);
         //get all group
-        getGroup();
+        presenter.showGroups();
 
    }
 
-private  void getCurrentUser(){
+   private void initViews(){
+       tvUserName = (TextView)findViewById(R.id.nameManager);
+       listGroups = (RecyclerView)findViewById(R.id.listGroup);
+       fab = findViewById(R.id.fab);
+       fab.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               Intent intent = new Intent(getApplicationContext() ,FormNewGroupActivity.class);
+               startActivity(intent);
+
+           }
+       });
+
+       progressDialog = new ProgressDialog(CreateGroupActivity.this,
+               R.style.AppTheme_Dark_Dialog);
+       progressDialog.setIndeterminate(true);
+       progressDialog.setMessage("Get Data...");
+   }
 
 
-    rootDataBase.child("users").orderByChild("ID").equalTo(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-            for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                User user = userSnapshot.getValue(User.class);
-                if(user!=null) {
-                    if(Common.manager && user.Manager.equals("true")) {
-                        Common.currentUser = user;
-                        tvUserName.setText(user.FirstName + " " + user.SurName);
-                    }else {
-                        Intent intent = new Intent(getApplicationContext() ,SigninActivity.class);
-                        startActivity(intent);
-                        finish();
-                        Toast.makeText(getBaseContext(), "You need create your profile .", Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
 
-        }
 
-        @Override
-        public void onCancelled(@NonNull DatabaseError databaseError) {
-            Log.w("Data base", "Failed to read value.", databaseError.toException());
-        }
-    });
-}
 
-    private  void getGroup(){
-        rootDataBase.child("groups").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                    Group group = userSnapshot.getValue(Group.class);
-                    if(group!=null) {
-                        listGroup.add(group);
-
-                    }
-
-                }
-
-                if(listGroup.size()!=0) {
-                    createListGroup(listGroup);
-                    fab.setVisibility(LinearLayout.INVISIBLE);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.w("Data base", "Failed to read value.", databaseError.toException());
-            }
-        });
+    @Override
+    public void showProgressBar() {
+        progressDialog.show();
     }
 
-    private void createListGroup(ArrayList<Group> listGroup){
+    @Override
+    public void hideProgressBar() {
+        progressDialog.dismiss();
+    }
 
-        listGroups = (RecyclerView)findViewById(R.id.listGroup);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1);
+    @Override
+    public void userLogout() {
+        Intent intent = new Intent(getApplicationContext() , SigninActivity.class);
+        startActivity(intent);
+        finish();
+        Toast.makeText(getBaseContext(), "You need create your profile .", Toast.LENGTH_LONG).show();
+    }
 
+    @Override
+    public void showUserName(String name) {
+        tvUserName.setText(name);
+    }
+
+    @Override
+    public void showGroups(ArrayList<Group> listGroup){
 
         //put gridManager to recyclerview
-        listGroups.setLayoutManager(gridLayoutManager);
+        listGroups.setLayoutManager(new GridLayoutManager(this,1));
         listGroups.setHasFixedSize(true);
 
         //create new adapter
@@ -155,7 +131,7 @@ private  void getCurrentUser(){
         //put adapter to recyclerview
         listGroups.setAdapter(groupListAdapter);
 
-
+        fab.setVisibility(LinearLayout.INVISIBLE);
     }
 
     @Override
