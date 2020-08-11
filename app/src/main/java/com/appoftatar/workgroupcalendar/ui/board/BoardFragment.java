@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -27,11 +28,13 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.CreateGroupActivity;
 import com.appoftatar.workgroupcalendar.adapters.BoardAdapter;
 import com.appoftatar.workgroupcalendar.models.MsgOnBoard;
 import com.appoftatar.workgroupcalendar.CreateMsgToBoardActivity;
 import com.appoftatar.workgroupcalendar.ManagerHomeActivity;
 import com.appoftatar.workgroupcalendar.R;
+import com.appoftatar.workgroupcalendar.views.BoardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -43,24 +46,28 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class BoardFragment extends Fragment {
+public class BoardFragment extends Fragment implements BoardView {
 
     private FloatingActionButton fab;
     private RecyclerView listMessages;
-    private DatabaseReference rootDataBase;
-    ArrayList<MsgOnBoard> lMessages;
-    private boolean actionActivity = true;
-    private NotificationManager notificationManager;
+    private View root;
+    private ProgressDialog progressDialog;
+
+
+
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_board, container, false);
-        listMessages = (RecyclerView)root.findViewById(R.id.rvBoard);
-        getListMessagesFromDataBase();
+        root = inflater.inflate(R.layout.fragment_board, container, false);
 
-        fab = root.findViewById(R.id.fab);
+        initViews();
+
+        //getListMessagesFromDataBase();
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,40 +81,17 @@ public class BoardFragment extends Fragment {
         return root;
     }
 
-    private void getListMessagesFromDataBase() {
-        lMessages = new ArrayList<>();
-        rootDataBase = FirebaseDatabase.getInstance().getReference();
-        String idManager = Common.currentUser.IdManager;
-        String currentGroup = Common.currentUser.IdWorkGroup;
-        if(Common.manager) {
-            idManager = Common.currentUser.ID;
-            currentGroup = Common.currentGroup;
-        }
-        rootDataBase.child("boards").child(idManager).orderByChild("nameGroup").equalTo(currentGroup).limitToLast(15).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                lMessages.clear();
-                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                    MsgOnBoard message = userSnapshot.getValue(MsgOnBoard.class);
-                    if(message!=null) {
-                        lMessages.add(message);
-                }
+    private void initViews(){
+        listMessages = (RecyclerView)root.findViewById(R.id.rvBoard);
+        fab = root.findViewById(R.id.fab);
 
-                }
-                if(lMessages.size() > 0 )
-                    Collections.reverse(lMessages);
-                createListMessages(lMessages);
-
-
-            }
-
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w("Data base", "Failed to read value.", databaseError.toException());
-            }
-        });
+        progressDialog = new ProgressDialog(getContext(),
+                R.style.AppTheme_Dark_Dialog);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage("Get Data...");
     }
+
+
 
     public static BoardFragment getInstance(){
         Bundle args = new Bundle();
@@ -117,21 +101,25 @@ public class BoardFragment extends Fragment {
         return fragment;
     }
 
-    private void createListMessages(ArrayList<MsgOnBoard> listGroup){
+    @Override
+    public void showProgressBar() {
+        progressDialog.show();
+    }
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),1);
+    @Override
+    public void hideProgressBar() {
+        progressDialog.dismiss();
+    }
 
+    @Override
+    public void showListMessages(ArrayList<MsgOnBoard> listGroup){
 
         //put gridManager to recyclerview
-        listMessages.setLayoutManager(gridLayoutManager);
+        listMessages.setLayoutManager(new GridLayoutManager(getContext(),1));
         listMessages.setHasFixedSize(true);
 
-        //create new adapter
-       BoardAdapter messagesListAdapter = new BoardAdapter(listGroup);
-
         //put adapter to recyclerview
-        listMessages.setAdapter(messagesListAdapter);
-
+        listMessages.setAdapter(new BoardAdapter(listGroup));
 
     }
 
