@@ -1,39 +1,25 @@
 package com.appoftatar.workgroupcalendar;
 
-import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.activity.activityForManager.FormNewGroupActivity;
 import com.appoftatar.workgroupcalendar.adapters.GroupListAdapter;
 import com.appoftatar.workgroupcalendar.di.components.DaggerManagerApiComponent;
 import com.appoftatar.workgroupcalendar.di.components.ManagerApiComponent;
 import com.appoftatar.workgroupcalendar.di.modules.viewsModules.GroupsViewModule;
 import com.appoftatar.workgroupcalendar.models.Group;
-import com.appoftatar.workgroupcalendar.models.User;
 import com.appoftatar.workgroupcalendar.presenters.GroupsPresenter;
 import com.appoftatar.workgroupcalendar.views.GroupsView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -79,7 +65,7 @@ public class CreateGroupActivity extends AppCompatActivity implements GroupsView
            @Override
            public void onClick(View view) {
 
-               Intent intent = new Intent(getApplicationContext() ,FormNewGroupActivity.class);
+               Intent intent = new Intent(getApplicationContext() , FormNewGroupActivity.class);
                startActivity(intent);
 
            }

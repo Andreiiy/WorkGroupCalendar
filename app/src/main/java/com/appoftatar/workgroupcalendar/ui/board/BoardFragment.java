@@ -1,49 +1,33 @@
 package com.appoftatar.workgroupcalendar.ui.board;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.CreateGroupActivity;
 import com.appoftatar.workgroupcalendar.adapters.BoardAdapter;
+import com.appoftatar.workgroupcalendar.di.components.BoardComponent;
+import com.appoftatar.workgroupcalendar.di.components.DaggerBoardComponent;
+import com.appoftatar.workgroupcalendar.di.modules.viewsModules.BoardViewModule;
 import com.appoftatar.workgroupcalendar.models.MsgOnBoard;
-import com.appoftatar.workgroupcalendar.CreateMsgToBoardActivity;
-import com.appoftatar.workgroupcalendar.ManagerHomeActivity;
+import com.appoftatar.workgroupcalendar.activity.CreateMsgToBoardActivity;
 import com.appoftatar.workgroupcalendar.R;
+import com.appoftatar.workgroupcalendar.presenters.BoardPresenter;
 import com.appoftatar.workgroupcalendar.views.BoardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
+
+import javax.inject.Inject;
 
 
 public class BoardFragment extends Fragment implements BoardView {
@@ -52,7 +36,9 @@ public class BoardFragment extends Fragment implements BoardView {
     private RecyclerView listMessages;
     private View root;
     private ProgressDialog progressDialog;
-
+    private BoardComponent component;
+    @Inject
+    BoardPresenter presenter;
 
 
 
@@ -65,7 +51,10 @@ public class BoardFragment extends Fragment implements BoardView {
 
         initViews();
 
-        //getListMessagesFromDataBase();
+            component = DaggerBoardComponent.builder().boardViewModule(new BoardViewModule(this)).build();
+            component.inject(this);
+
+        presenter.getListMessages();
 
 
         fab.setOnClickListener(new View.OnClickListener() {

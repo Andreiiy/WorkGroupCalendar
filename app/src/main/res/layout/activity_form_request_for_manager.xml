@@ -7,7 +7,7 @@
     android:background="@color/colorOrange"
     android:orientation="vertical"
     android:id="@+id/linearLayout"
-    tools:context=".Form_request_forManagerActivity">
+    tools:context=".activity.activityForManager.Form_request_forManagerActivity">
 
     <TextView
         android:textStyle="bold"

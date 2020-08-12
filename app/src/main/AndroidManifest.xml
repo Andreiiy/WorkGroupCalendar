@@ -16,84 +16,84 @@
         android:roundIcon="@drawable/icon_aplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".AddReminderActivity"></activity>
-        <activity android:name=".InformationDayOfCalendarRemaindesActivity" />
+        <activity android:name=".activity.AddReminderActivity"></activity>
+        <activity android:name=".activity.InformationDayOfCalendarRemaindesActivity" />
         <activity
-            android:name=".SalaryInformationActivity"
+            android:name=".activity.activityForEmployee.SalaryInformationActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".FormForEditionalWorkDayActivity"
+            android:name=".activity.activityForEmployee.FormForEditionalWorkDayActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".WorkDayOfCalendarActivity"
+            android:name=".activity.activityForEmployee.WorkDayOfCalendarActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".EditAdditionalInformation2Activity"
+            android:name=".activity.activityForEmployee.EditAdditionalInformation2Activity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".AdditionalInformationActivity"
+            android:name=".activity.activityForEmployee.AdditionalInformationActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".ConstructorAdditionalScheduleActivity"
+            android:name=".activity.activityForManager.ConstructorAdditionalScheduleActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".AdditionalScheduleActivity"
+            android:name=".activity.AdditionalScheduleActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name=".activity.ResetPasswordActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".AnsverToRequestActivity"
+            android:name=".activity.activityForEmployee.AnsverToRequestActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".RedactorScheduleActivity"
+            android:name=".activity.activityForManager.RedactorScheduleActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".InforrmationDayOfCalendar"
+            android:name=".activity.InforrmationDayOfCalendar"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Form_request_forManagerActivity"
+            android:name=".activity.activityForManager.Form_request_forManagerActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".FormHolidayRequestActivity"
+            android:name=".activity.activityForManager.FormHolidayRequestActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".CreateHolidayRequestActivity"
+            android:name=".activity.activityForEmployee.CreateHolidayRequestActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".InformationEnployeeActivity"
+            android:name=".activity.activityForManager.InformationEnployeeActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".EmployeeHomeActivity"
+            android:name=".activity.activityForEmployee.EmployeeHomeActivity"
             android:label="@string/title_activity_employee_home"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".CreateMsgToBoardActivity"
+            android:name=".activity.CreateMsgToBoardActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".StatusSelectionActivity"
+            android:name=".activity.StatusSelectionActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".FormNewGroupActivity"
+            android:name=".activity.activityForManager.FormNewGroupActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
@@ -111,13 +111,13 @@
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".ManagerHomeActivity"
+            android:name=".activity.activityForManager.ManagerHomeActivity"
             android:label="@string/title_activity_manager_home"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>

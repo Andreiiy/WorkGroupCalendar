@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity.activityForManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.adapters.EmployesFromRedactorAdapter;
 import com.appoftatar.workgroupcalendar.adapters.ShiftAdapter;
 import com.appoftatar.workgroupcalendar.models.RedactorShedule;

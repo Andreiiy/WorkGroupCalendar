@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.appoftatar.workgroupcalendar.InforrmationDayOfCalendar;
+import com.appoftatar.workgroupcalendar.activity.InforrmationDayOfCalendar;
 import com.appoftatar.workgroupcalendar.calendar.ItemWorkCalendar;
 import com.appoftatar.workgroupcalendar.calendar.MonthWorkCalendar;
 import com.appoftatar.workgroupcalendar.R;

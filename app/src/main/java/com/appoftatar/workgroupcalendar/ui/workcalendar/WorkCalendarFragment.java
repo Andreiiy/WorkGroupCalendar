@@ -17,13 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
 import com.appoftatar.workgroupcalendar.R;
-import com.appoftatar.workgroupcalendar.SalaryInformationActivity;
-import com.appoftatar.workgroupcalendar.adapters.CalendarAdapter;
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.SalaryInformationActivity;
 import com.appoftatar.workgroupcalendar.adapters.WorkCalendarAdapter;
 import com.appoftatar.workgroupcalendar.calendar.MonthWorkCalendar;
 import com.appoftatar.workgroupcalendar.calendar.WorkDay;
 import com.appoftatar.workgroupcalendar.models.User;
-import com.appoftatar.workgroupcalendar.ui.calendar.CalendarFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

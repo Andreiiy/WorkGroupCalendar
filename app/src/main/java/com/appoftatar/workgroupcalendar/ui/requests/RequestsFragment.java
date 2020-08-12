@@ -1,17 +1,9 @@
 package com.appoftatar.workgroupcalendar.ui.requests;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,7 +16,6 @@ import android.view.ViewGroup;
 import com.appoftatar.workgroupcalendar.adapters.RequestsAdapter;
 import com.appoftatar.workgroupcalendar.models.HolidayRequest;
 import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.ManagerHomeActivity;
 import com.appoftatar.workgroupcalendar.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

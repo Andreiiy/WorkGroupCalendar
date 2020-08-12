@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
+import com.appoftatar.workgroupcalendar.SigninActivity;
 
 public class StatusSelectionActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnManager, btnEmployes;
@@ -39,7 +41,7 @@ private void initViews(){
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.btnManager){
-            Intent intent = new Intent(this,SigninActivity.class);
+            Intent intent = new Intent(this, SigninActivity.class);
             Common.manager = true;
             startActivity(intent);
         }else if(v.getId() == R.id.btnEmployes){

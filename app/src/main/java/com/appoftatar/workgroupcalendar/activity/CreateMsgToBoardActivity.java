@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.models.MsgOnBoard;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;

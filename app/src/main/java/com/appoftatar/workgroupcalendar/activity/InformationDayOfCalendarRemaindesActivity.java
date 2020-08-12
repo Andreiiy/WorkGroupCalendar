@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
+import com.appoftatar.workgroupcalendar.activity.AddReminderActivity;
 import com.appoftatar.workgroupcalendar.calendar.WorkDayWithRemainder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,10 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 public class InformationDayOfCalendarRemaindesActivity extends AppCompatActivity {
 private TextView tv_weekday;

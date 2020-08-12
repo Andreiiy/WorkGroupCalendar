@@ -7,7 +7,7 @@
     android:background="@color/colorOrange"
     android:orientation="vertical"
     android:id="@+id/linearLayout"
-    tools:context=".FormHolidayRequestActivity">
+    tools:context=".activity.activityForManager.FormHolidayRequestActivity">
 
     <TextView
         android:textStyle="bold"

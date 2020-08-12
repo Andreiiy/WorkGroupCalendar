@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.appoftatar.workgroupcalendar.InformationEnployeeActivity;
+import com.appoftatar.workgroupcalendar.activity.activityForManager.InformationEnployeeActivity;
 import com.appoftatar.workgroupcalendar.models.User;
 import com.appoftatar.workgroupcalendar.R;
 

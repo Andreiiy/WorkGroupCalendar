@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorOrange"
     android:orientation="vertical"
-    tools:context=".AdditionalInformationActivity">
+    tools:context=".activity.activityForEmployee.AdditionalInformationActivity">
 
 
 

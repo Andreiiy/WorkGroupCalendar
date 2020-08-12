@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity.activityForManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -14,7 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.models.AdditionalInformation;
+import com.appoftatar.workgroupcalendar.R;
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.AdditionalInformationActivity;
 import com.appoftatar.workgroupcalendar.models.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -107,7 +108,7 @@ public class InformationEnployeeActivity extends AppCompatActivity {
                             if (user.ID.equals(userId))
                                 userSnapshot.getRef().setValue(null);
                         }
-                        Intent intent = new Intent(getApplicationContext(),ManagerHomeActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), ManagerHomeActivity.class);
                         startActivity(intent);
                     }
                     @Override

@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity.activityForManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.CreateGroupActivity;
+import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.models.Group;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -66,7 +68,7 @@ public class FormNewGroupActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Intent intent = new Intent(getBaseContext(),CreateGroupActivity.class);
+                        Intent intent = new Intent(getBaseContext(), CreateGroupActivity.class);
                         startActivity(intent);
                         finish();
                     }

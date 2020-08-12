@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

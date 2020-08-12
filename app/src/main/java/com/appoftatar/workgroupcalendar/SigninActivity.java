@@ -13,6 +13,9 @@ import android.os.Bundle;
 import com.appoftatar.workgroupcalendar.Common.Common;
 
 
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.EmployeeHomeActivity;
+import com.appoftatar.workgroupcalendar.activity.ResetPasswordActivity;
+import com.appoftatar.workgroupcalendar.activity.StatusSelectionActivity;
 import com.appoftatar.workgroupcalendar.di.components.DaggerEntranceComponent;
 import com.appoftatar.workgroupcalendar.di.components.EntranceComponent;
 import com.appoftatar.workgroupcalendar.di.modules.SigninViewModule;

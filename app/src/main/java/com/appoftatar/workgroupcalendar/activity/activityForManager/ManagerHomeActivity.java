@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity.activityForManager;
 
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Menu;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.calendar.WorkDayWithRemainder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;

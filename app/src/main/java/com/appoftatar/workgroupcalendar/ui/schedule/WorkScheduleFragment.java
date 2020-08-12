@@ -5,7 +5,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,8 +21,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.appoftatar.workgroupcalendar.RedactorScheduleActivity;
-import com.appoftatar.workgroupcalendar.AdditionalScheduleActivity;
+import com.appoftatar.workgroupcalendar.activity.activityForManager.RedactorScheduleActivity;
+import com.appoftatar.workgroupcalendar.activity.AdditionalScheduleActivity;
 import com.appoftatar.workgroupcalendar.Common.Common;
 import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.adapters.ShiftAdapter;
@@ -38,7 +36,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

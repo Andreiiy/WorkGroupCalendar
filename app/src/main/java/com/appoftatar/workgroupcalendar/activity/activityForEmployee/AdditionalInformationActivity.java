@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity.activityForEmployee;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.EditAdditionalInformation2Activity;
 import com.appoftatar.workgroupcalendar.models.AdditionalInformation;
 import com.appoftatar.workgroupcalendar.models.User;
 import com.google.firebase.database.DataSnapshot;

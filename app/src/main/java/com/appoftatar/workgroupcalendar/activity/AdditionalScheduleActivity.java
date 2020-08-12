@@ -1,12 +1,10 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
+import com.appoftatar.workgroupcalendar.activity.activityForManager.ConstructorAdditionalScheduleActivity;
 import com.appoftatar.workgroupcalendar.adapters.TabsPagerAdditionalScheduleAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;

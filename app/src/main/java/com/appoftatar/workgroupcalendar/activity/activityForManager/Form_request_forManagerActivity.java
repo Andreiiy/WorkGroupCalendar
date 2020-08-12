@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity.activityForManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.models.HolidayRequest;
 import com.appoftatar.workgroupcalendar.models.UserInVacation;
 import com.google.firebase.database.DataSnapshot;
@@ -126,7 +127,7 @@ public class Form_request_forManagerActivity extends AppCompatActivity {
 
 
                 }
-                Intent intent = new Intent(getBaseContext(),ManagerHomeActivity.class);
+                Intent intent = new Intent(getBaseContext(), ManagerHomeActivity.class);
                 startActivity(intent);
                 finish();
 

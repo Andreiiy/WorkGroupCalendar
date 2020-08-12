@@ -1,15 +1,9 @@
 package com.appoftatar.workgroupcalendar.calendar;
 
-import android.content.Intent;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.SigninActivity;
-import com.appoftatar.workgroupcalendar.StatusSelectionActivity;
 import com.appoftatar.workgroupcalendar.models.User;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

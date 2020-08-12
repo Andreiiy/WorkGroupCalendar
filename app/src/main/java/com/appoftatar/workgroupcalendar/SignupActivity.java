@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.activity.activityForManager.ManagerHomeActivity;
 import com.appoftatar.workgroupcalendar.di.components.DaggerEntranceComponent;
 import com.appoftatar.workgroupcalendar.di.components.EntranceComponent;
 import com.appoftatar.workgroupcalendar.di.modules.SigninViewModule;
@@ -21,7 +22,6 @@ import com.appoftatar.workgroupcalendar.di.modules.SignupViewModule;
 import com.appoftatar.workgroupcalendar.models.User;
 import com.appoftatar.workgroupcalendar.presenters.SignupPresenter;
 import com.appoftatar.workgroupcalendar.views.SignupView;
-import com.google.firebase.auth.FirebaseAuth;
 
 import javax.inject.Inject;
 

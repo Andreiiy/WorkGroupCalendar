@@ -14,7 +14,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.provider.Settings;
-import android.provider.SyncStateContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,13 +25,11 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.ManagerHomeActivity;
 import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.adapters.TabsPagerEmployeeFragmentAdapter;
 import com.appoftatar.workgroupcalendar.calendar.WorkDayWithRemainder;
 import com.appoftatar.workgroupcalendar.models.MsgOnBoard;
 import com.appoftatar.workgroupcalendar.models.User;
-import com.google.android.gms.common.internal.Constants;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -43,7 +40,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
-import java.util.Collections;
 
 public class HomeFragment extends Fragment {
 

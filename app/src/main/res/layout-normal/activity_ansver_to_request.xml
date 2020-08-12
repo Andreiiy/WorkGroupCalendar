@@ -8,7 +8,7 @@
     android:background="@color/colorOrange"
     android:id="@+id/linearLayout"
     android:launchMode="singleTask"
-    tools:context=".AnsverToRequestActivity">
+    tools:context=".activity.activityForEmployee.AnsverToRequestActivity">
 
     <ImageView
         android:id="@+id/ivTitle"

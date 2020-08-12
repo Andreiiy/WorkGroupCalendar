@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.ManagerHomeActivity;
+import com.appoftatar.workgroupcalendar.activity.activityForManager.ManagerHomeActivity;
 import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.models.Group;
 

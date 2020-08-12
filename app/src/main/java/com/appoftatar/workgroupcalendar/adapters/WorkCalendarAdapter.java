@@ -14,10 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
-import com.appoftatar.workgroupcalendar.EditAdditionalInformation2Activity;
 import com.appoftatar.workgroupcalendar.R;
-import com.appoftatar.workgroupcalendar.WorkDayOfCalendarActivity;
-import com.appoftatar.workgroupcalendar.calendar.ItemWorkCalendar;
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.WorkDayOfCalendarActivity;
 import com.appoftatar.workgroupcalendar.calendar.MonthWorkCalendar;
 import com.appoftatar.workgroupcalendar.calendar.WorkDay;
 

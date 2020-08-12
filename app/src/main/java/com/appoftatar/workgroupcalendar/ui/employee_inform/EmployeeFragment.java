@@ -26,11 +26,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
-import com.appoftatar.workgroupcalendar.AdditionalInformationActivity;
-import com.appoftatar.workgroupcalendar.CreateHolidayRequestActivity;
-import com.appoftatar.workgroupcalendar.StatusSelectionActivity;
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.AdditionalInformationActivity;
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.CreateHolidayRequestActivity;
+import com.appoftatar.workgroupcalendar.activity.StatusSelectionActivity;
 import com.appoftatar.workgroupcalendar.models.HolidayRequest;
-import com.appoftatar.workgroupcalendar.AnsverToRequestActivity;
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.AnsverToRequestActivity;
 import com.appoftatar.workgroupcalendar.Common.Common;
 import com.appoftatar.workgroupcalendar.R;
 import com.appoftatar.workgroupcalendar.SigninActivity;
@@ -47,7 +47,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;

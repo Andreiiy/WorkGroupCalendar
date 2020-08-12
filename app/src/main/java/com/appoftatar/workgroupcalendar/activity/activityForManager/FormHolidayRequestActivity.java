@@ -1,4 +1,4 @@
-package com.appoftatar.workgroupcalendar;
+package com.appoftatar.workgroupcalendar.activity.activityForManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.R;
+import com.appoftatar.workgroupcalendar.activity.activityForEmployee.EmployeeHomeActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -71,7 +73,7 @@ public class FormHolidayRequestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Common.holidayRequest = null;
-                Intent intent = new Intent(getBaseContext(),EmployeeHomeActivity.class);
+                Intent intent = new Intent(getBaseContext(), EmployeeHomeActivity.class);
                 startActivity(intent);
             }
         });

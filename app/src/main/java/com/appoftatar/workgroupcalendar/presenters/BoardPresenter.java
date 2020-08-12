@@ -16,15 +16,18 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import javax.inject.Inject;
+
 public class BoardPresenter {
 
     private BoardView view;
     private DatabaseReference rootDataBase;
 
 
-
+    @Inject
     public BoardPresenter(BoardView view) {
         this.view = view;
+
     }
 
     public void getListMessages() {
