@@ -3,22 +3,25 @@ package com.appoftatar.workgroupcalendar.di.modules;
 import com.appoftatar.workgroupcalendar.di.modules.viewsModules.BoardViewModule;
 import com.appoftatar.workgroupcalendar.di.modules.viewsModules.EmployeesModule;
 import com.appoftatar.workgroupcalendar.di.modules.viewsModules.GroupsViewModule;
+import com.appoftatar.workgroupcalendar.di.modules.viewsModules.WorkCalendarViewModule;
 import com.appoftatar.workgroupcalendar.presenters.BoardPresenter;
 import com.appoftatar.workgroupcalendar.presenters.EmployeesPresenter;
 import com.appoftatar.workgroupcalendar.presenters.GroupsPresenter;
 import com.appoftatar.workgroupcalendar.presenters.SigninPresenter;
 import com.appoftatar.workgroupcalendar.presenters.SignupPresenter;
+import com.appoftatar.workgroupcalendar.presenters.WorkCalendarPresenter;
 import com.appoftatar.workgroupcalendar.views.BoardView;
 import com.appoftatar.workgroupcalendar.views.EmployesView;
 import com.appoftatar.workgroupcalendar.views.GroupsView;
 import com.appoftatar.workgroupcalendar.views.SigninView;
 import com.appoftatar.workgroupcalendar.views.SignupView;
+import com.appoftatar.workgroupcalendar.views.WorkCalendarView;
 
 import dagger.Module;
 import dagger.Provides;
 
 @Module(includes = {SigninViewModule.class,SignupViewModule.class, GroupsViewModule.class, EmployeesModule.class,
-        BoardViewModule.class})
+        BoardViewModule.class, WorkCalendarViewModule.class})
 public class PresentersModule {
 
     @Provides
@@ -43,5 +46,10 @@ public class PresentersModule {
     @Provides
     public BoardPresenter provideBoardPresenter(BoardView view){
         return new BoardPresenter(view);
+    }
+
+    @Provides
+    public WorkCalendarPresenter provideWorkCalendarPresenter(WorkCalendarView view){
+        return new WorkCalendarPresenter(view);
     }
 }

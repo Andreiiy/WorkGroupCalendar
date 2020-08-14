@@ -6,6 +6,8 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import com.appoftatar.workgroupcalendar.Common.Common;
+import com.appoftatar.workgroupcalendar.di.components.DaggerMyCalendarComponent;
+import com.appoftatar.workgroupcalendar.di.components.MyCalendarComponent;
 import com.appoftatar.workgroupcalendar.models.UserInVacation;
 import com.appoftatar.workgroupcalendar.models.UserSick;
 import com.appoftatar.workgroupcalendar.ui.workcalendar.WorkCalendarFragment;
@@ -21,24 +23,33 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-public class MonthWorkCalendar {
+import javax.inject.Inject;
 
-    private final MyCalendar myCalendar;
-    private final ArrayList<Date> listDatesForWorkMonth;
+public class MonthWorkCalendar {
+    @Inject
+    MyCalendar myCalendar;
+    private ArrayList<Date> listDatesForWorkMonth;
     private String name;
     private Integer numberMonth;
     private ArrayList<ItemWorkCalendar> workDays;
     private ArrayList<WorkDay> workDaysWithShifts;
 
     public MonthWorkCalendar(Integer numberMonth) {
+        MyCalendarComponent component = DaggerMyCalendarComponent.builder().build();
+        component.inject(this);
+        setNumberMonth(numberMonth);
+    }
+
+    public void setNumberMonth(Integer numberMonth){
         this.numberMonth = numberMonth;
         Calendar calendar = Calendar.getInstance();
-        myCalendar = new MyCalendar();
         listDatesForWorkMonth = myCalendar.getMonth(numberMonth);
         calendar.setTime(listDatesForWorkMonth.get(15));
         name =calendar.getDisplayName(calendar.MONTH,Calendar.LONG, Locale.ENGLISH);
         createListDays();
+        createWorkDaysList();
     }
+
 
     private void createListDays(){
         workDays = new ArrayList<>();
@@ -105,6 +116,10 @@ public class MonthWorkCalendar {
 
     }
 
+    public ArrayList<Date> getListDatesForWorkMonth() {
+        return listDatesForWorkMonth;
+    }
+
     public String getName(){
        return name;
    }
@@ -125,13 +140,10 @@ public class MonthWorkCalendar {
 
     //////////////////////////////////////////////////////////////////////////////////
 
-    public void createWorkCalendar(final WorkCalendarFragment act){
-                 createWorkDaysList();
-                 getWorkerDays(act);
-    }
 
 
-    private void setWorkerDaysToCalendar(WorkCalendarFragment act, ArrayList<WorkDay> workDaysList){
+
+    public void setWorkerDaysToCalendar(ArrayList<WorkDay> workDaysList){
         for (WorkDay item:workDaysList) {
             Date currentDate = new GregorianCalendar().getTime();
             if(currentDate.compareTo(item.getDate())>=0)
@@ -145,42 +157,11 @@ public class MonthWorkCalendar {
             }
         }
 
-        act.initRecyclerViewCalendar();
-        act.showDataSalary();
     }
 
 
 
-    private void getWorkerDays(final WorkCalendarFragment act){
 
-        DatabaseReference   root = FirebaseDatabase.getInstance().getReference();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(listDatesForWorkMonth.get(15));
-        root.child("workdays").child(Integer.toString(calendar.getTime().getYear()+1900))
-                .child(Integer.toString(numberMonth)).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ArrayList<WorkDay> workDaysList = new ArrayList<>();
-                for (DataSnapshot dateSnapshot: dataSnapshot.getChildren()) {
-                    WorkDay workDay = new WorkDay();
-                    workDay =  dateSnapshot.child(Common.currentUser.IdManager).child(Common.currentUser.IdWorkGroup)
-                            .child(Common.currentUser.ID).getValue(WorkDay.class);
-
-
-                    if(workDay != null)
-                        workDaysList.add(workDay);
-
-                }
-               setWorkerDaysToCalendar(act,workDaysList);
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w("Data base", "Failed to read value.", databaseError.toException());
-            }
-        });
-
-
-    }
 
 
     private void createWorkDaysList() {

@@ -5,13 +5,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import javax.inject.Inject;
+
 public class MyCalendar {
 
     private ArrayList<Date> curentMonth;
     public Date curentDate;
 
     private int countDaysInManth;
-
+    @Inject
     public MyCalendar(){
         curentDate = new GregorianCalendar().getTime();
         curentMonth = new ArrayList<>();
